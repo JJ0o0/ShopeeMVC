@@ -1,0 +1,4 @@
+@model Produto
+@{ ViewData["Title"] = "Excluir produto"; }
+<a class="back" asp-action="Index">← Voltar aos produtos</a><h1>Excluir produto</h1>
+<section class="panel narrow"><p>Confirma a exclusão de <strong>@Model.Nome</strong>?</p><p>Preço: @Model.Preco.ToString("C") · Estoque: @Model.Estoque</p><p>O produto será removido do catálogo.</p><form asp-action="Delete" asp-route-id="@Model.Codigo" method="post"><div class="actions"><button class="btn danger">Confirmar exclusão</button><a class="btn secondary" asp-action="Index">Cancelar</a></div></form></section>

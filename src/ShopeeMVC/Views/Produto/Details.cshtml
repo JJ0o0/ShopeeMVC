@@ -1,0 +1,4 @@
+@model Produto
+@{ ViewData["Title"] = "Detalhes do produto"; }
+<a class="back" asp-action="Index">← Voltar aos produtos</a>
+<section class="panel narrow"><p class="eyebrow">PRODUTO #@Model.Codigo</p><h1>@Model.Nome</h1><p class="price">@Model.Preco.ToString("C")</p><p>Estoque: <strong>@Model.Estoque unidade(s)</strong></p><div class="actions"><form asp-controller="Carrinho" asp-action="Adicionar" asp-route-id="@Model.Codigo" method="post"><button class="btn" disabled="@(Model.Estoque == 0)">Adicionar ao carrinho</button></form><a class="btn secondary" asp-action="Edit" asp-route-id="@Model.Codigo">Editar</a></div></section>

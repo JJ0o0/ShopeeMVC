@@ -1,0 +1,4 @@
+@model ProdutoForm
+@{ ViewData["Title"] = "Cadastrar produto"; }
+<a class="back" asp-action="Index">← Voltar aos produtos</a><h1>Cadastrar produto</h1>
+<section class="panel narrow"><form asp-action="Create" asp-route-id="@Model.Codigo" method="post"><partial name="_Form" model="Model" /></form></section>
